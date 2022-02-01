@@ -10,12 +10,12 @@ a {
 }
 
 a.shop {
-  background-image: url('/assets/shop.jpg');
+  background-image: url('/assets/shop-l.jpg');
 }
 
 a.heroes {
   background-image: url('/assets/hero.jpg');
-  color:white;
+  color: white;
 }
 
 .frontPage-container {

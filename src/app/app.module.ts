@@ -11,6 +11,7 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
 
 @NgModule({
   imports: [
@@ -18,10 +19,14 @@ import { ShippingComponent } from './shipping/shipping.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      { path: 'products/:productId', component: ProductDetailsComponent },
-      { path: 'cart', component: CartComponent },
-      { path: 'shipping', component: ShippingComponent },
+      { path: 'myshop', component: ProductListComponent },
+      {
+        path: 'myshop/products/:productId',
+        component: ProductDetailsComponent,
+      },
+      { path: 'myshop/cart', component: CartComponent },
+      { path: 'myshop/shipping', component: ShippingComponent },
+      { path: 'dashboard', component: HeroesDashboardComponent },
     ]),
   ],
   declarations: [
@@ -32,6 +37,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
+    HeroesDashboardComponent,
   ],
   bootstrap: [AppComponent],
 })

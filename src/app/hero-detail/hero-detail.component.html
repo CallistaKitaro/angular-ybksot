@@ -1,0 +1,17 @@
+<hero-card>
+  <h1 title>{{ dashTitle }}</h1>
+
+  <hero-nav></hero-nav>
+
+  <div class="margin-top-xl" *ngIf="selectedHero">
+    <h2>{{ selectedHero.name }} Details</h2>
+
+    <form>
+      <div><span>id:</span> {{ selectedHero.id }}</div>
+      <div><span>name:</span> {{ selectedHero.name }}</div>
+      <div><span>strength:</span> {{ selectedHero.strength }}</div>
+    </form>
+  </div>
+
+  <button>Back</button>
+</hero-card>

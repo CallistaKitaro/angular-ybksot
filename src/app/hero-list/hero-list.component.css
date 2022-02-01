@@ -1,0 +1,30 @@
+.hero-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 250px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.hero-id,
+.hero-name {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.hero-id {
+  width: 40px;
+  background-color: lightseagreen;
+  color: darkblue;
+  border-radius: 4px 0 0 4px;
+  justify-content: center;
+}
+
+.hero-name {
+  width: 100%;
+  background-color: lightgrey;
+  border-radius: 0 4px 4px 0;
+  padding-left: 20px;
+}

@@ -1,0 +1,16 @@
+<hero-card>
+  <h1 title>{{ dashTitle }}</h1>
+
+  <hero-nav [navigation]="'heroes'"></hero-nav>
+
+  <div class="margin-top-xl">
+    <h2>My Heroes</h2>
+
+    <div *ngFor="let hero of heroes">
+      <a [routerLink]="['/heroes', hero.id]" class="hero-link">
+        <div class="hero-id">{{ hero.id }}</div>
+        <div class="hero-name">{{ hero.name }}</div>
+      </a>
+    </div>
+  </div>
+</hero-card>

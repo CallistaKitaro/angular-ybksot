@@ -144,3 +144,16 @@ Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.container-padding {
+  padding: 2px 16px;
+}
+
+.margin-top-xl {
+  margin-top: 40px;
+}

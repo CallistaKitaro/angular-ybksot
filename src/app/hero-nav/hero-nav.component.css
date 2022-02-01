@@ -1,0 +1,21 @@
+.nav-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  padding: 6px 10px;
+  background-color: lightgrey;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #616161;
+}
+
+.nav-item + .nav-item {
+  margin-left: 12px;
+}
+
+.nav-item.active {
+  color: cornflowerblue;
+  font-weight: bold;
+}

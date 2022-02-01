@@ -12,6 +12,10 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.component';
+import { HeroCardComponent } from './hero-card/hero-card.component';
+import { HeroNavComponent } from './hero-nav/hero-nav.component';
+import { HeroListComponent } from './hero-list/hero-list.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   imports: [
@@ -27,6 +31,8 @@ import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.co
       { path: 'myshop/cart', component: CartComponent },
       { path: 'myshop/shipping', component: ShippingComponent },
       { path: 'dashboard', component: HeroesDashboardComponent },
+      { path: 'heroes', component: HeroListComponent },
+      { path: 'heroes/:heroId', component: HeroDetailComponent },
     ]),
   ],
   declarations: [
@@ -38,6 +44,10 @@ import { HeroesDashboardComponent } from './heroes-dashboard/heroes-dashboard.co
     CartComponent,
     ShippingComponent,
     HeroesDashboardComponent,
+    HeroCardComponent,
+    HeroNavComponent,
+    HeroListComponent,
+    HeroDetailComponent,
   ],
   bootstrap: [AppComponent],
 })

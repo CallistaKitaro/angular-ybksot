@@ -1,0 +1,16 @@
+<div class="nav-container">
+  <a
+    class="nav-item"
+    [ngClass]="{ active: navigation == 'dashboard' }"
+    routerLink="/dashboard"
+  >
+    Dashboard
+  </a>
+  <a
+    class="nav-item"
+    [ngClass]="{ active: navigation == 'heroes' }"
+    routerLink="/heroes"
+  >
+    Heroes
+  </a>
+</div>

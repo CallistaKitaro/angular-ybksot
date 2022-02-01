@@ -1,0 +1,21 @@
+a {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  background-color: lightgrey;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  mask-image: url();
+}
+
+.frontPage-container {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.frontPage-container div {
+  min-width: 80vw;
+}

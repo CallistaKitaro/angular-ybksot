@@ -16,6 +16,7 @@ import { HeroCardComponent } from './hero-card/hero-card.component';
 import { HeroNavComponent } from './hero-nav/hero-nav.component';
 import { HeroListComponent } from './hero-list/hero-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { FrontPageComponent } from './front-page/front-page.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
+      { path: '', component: FrontPageComponent },
       { path: 'myshop', component: ProductListComponent },
       {
         path: 'myshop/products/:productId',
@@ -48,6 +50,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     HeroNavComponent,
     HeroListComponent,
     HeroDetailComponent,
+    FrontPageComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -4,14 +4,35 @@
   <hero-nav></hero-nav>
 
   <div class="margin-top-xl" *ngIf="selectedHero">
-    <h2>{{ selectedHero.name }} Details</h2>
+    <h2 style="font-weight: bold">{{ selectedHero.name }} Details</h2>
 
-    <form>
-      <div><span>id:</span> {{ selectedHero.id }}</div>
-      <div><span>name:</span> {{ selectedHero.name }}</div>
-      <div><span>strength:</span> {{ selectedHero.strength }}</div>
+    <form [formGroup]="heroDetailForm">
+      <div class="display-flex margin-bottom-m">
+        <label>id:</label>
+        {{ selectedHero.id }}
+      </div>
+      <div class="input-con">
+        <label for="name">name:</label>
+        <input
+          autocomplete="off"
+          id="name"
+          formControlName="name"
+          [(ngModel)]="selectedHero.name"
+          (change)="onChange(selectedHero)"
+        />
+      </div>
+      <div class="input-con">
+        <label for="strength">strength:</label>
+        <input
+          autocomplete="off"
+          id="strength"
+          formControlName="strength"
+          [(ngModel)]="selectedHero.strength"
+          (change)="onChange(selectedHero)"
+        />
+      </div>
     </form>
   </div>
 
-  <button>Back</button>
+  <button (click)="back()">Back</button>
 </hero-card>

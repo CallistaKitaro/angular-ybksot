@@ -145,6 +145,10 @@ Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */
 
+.display-flex {
+  display: flex;
+}
+
 .justify-content-space-around {
   display: flex;
   justify-content: space-around;
@@ -161,4 +165,8 @@ can be found in the LICENSE file at https://angular.io/license
 
 .margin-top-xl {
   margin-top: 40px;
+}
+
+.margin-bottom-m {
+  margin-bottom: 10px;
 }

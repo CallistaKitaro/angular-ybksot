@@ -1,0 +1,12 @@
+.topHeroes {
+  display: grid;
+  width: 20%;
+  margin: 0 4%;
+  height: 200px;
+  background-color: lightseagreen;
+  color: white;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
+  place-items: center;
+}

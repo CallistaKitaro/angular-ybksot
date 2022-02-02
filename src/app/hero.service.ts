@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class HeroService {
-  heroes = [
+  private heroes = [
     {
       id: 1,
       name: 'Mr.Nice',
@@ -21,10 +21,39 @@ export class HeroService {
       name: 'Boombastic',
       strength: 50,
     },
+    {
+      id: 3,
+      name: 'Weakling',
+      strength: 5,
+    },
+    {
+      id: 4,
+      name: 'Thor',
+      strength: 80,
+    },
+    {
+      id: 5,
+      name: 'Arrow guy',
+      strength: 30,
+    },
+    {
+      id: 6,
+      name: 'Spice gorl',
+      strength: 77,
+    },
   ];
   constructor() {}
 
   getHeroes() {
     return this.heroes;
+  }
+
+  setHero(hero: Hero) {
+    debugger;
+    this.heroes.find((current) => {
+      if (current.id === hero.id) {
+        current = hero;
+      }
+    });
   }
 }

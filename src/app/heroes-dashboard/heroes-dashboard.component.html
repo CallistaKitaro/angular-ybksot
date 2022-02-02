@@ -6,4 +6,13 @@
   <div class="justify-center">
     <h2>Top Heroes</h2>
   </div>
+  <div class="display-flex margin-top-xl">
+    <a
+      [routerLink]="['/heroes', hero.id]"
+      class="topHeroes"
+      *ngFor="let hero of topHeroes"
+    >
+      {{ hero.name }}
+    </a>
+  </div>
 </hero-card>

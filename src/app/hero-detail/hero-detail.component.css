@@ -16,3 +16,11 @@ button {
 .input-con label {
   margin-top: 10px;
 }
+
+.validation {
+  display: none;
+}
+
+.validation.active{
+  display: block;
+}

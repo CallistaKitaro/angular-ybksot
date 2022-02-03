@@ -170,3 +170,7 @@ can be found in the LICENSE file at https://angular.io/license
 .margin-bottom-m {
   margin-bottom: 10px;
 }
+
+.relative {
+  position: relative;
+}

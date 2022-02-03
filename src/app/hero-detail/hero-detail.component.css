@@ -9,6 +9,13 @@ button {
   background-color: lightseagreen;
 }
 
+.validation {
+  position: absolute;
+  left: 0;
+  bottom: 13px;
+  color: indianred;
+}
+
 .input-con {
   display: flex;
 }
@@ -17,10 +24,10 @@ button {
   margin-top: 10px;
 }
 
-.validation {
-  display: none;
+.input-con input {
+  margin-bottom: 35px;
 }
 
-.validation.active{
-  display: block;
+input.error {
+  border-color: indianred;
 }

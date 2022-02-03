@@ -49,7 +49,6 @@ export class HeroService {
   }
 
   setHero(hero: Hero) {
-    debugger;
     this.heroes.find((current) => {
       if (current.id === hero.id) {
         current.name = hero.name;

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  NgForm,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Location } from '@angular/common';
 import { HeroService, Hero } from '../hero.service';
 
@@ -24,20 +30,14 @@ export class HeroDetailFormValidation {
 export class HeroDetailComponent implements OnInit {
   dashTitle = 'Tour of Heroes';
   selectedHero: Hero | undefined;
-  heroForm: FormGroup;
+  heroForm!: FormGroup;
 
   constructor(
     private route: ActivatedRoute,
     private heroService: HeroService,
     private location: Location,
     private formBuilder: FormBuilder
-  ) {
-    this.heroForm = this.formBuilder.group({
-      id: 0,
-      name: ['', [Validators.required]],
-      strength: ['', [Validators.required]],
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -48,10 +48,14 @@ export class HeroDetailComponent implements OnInit {
       .find((hero) => hero.id === heroIdFromRoute);
 
     if (this.selectedHero !== undefined) {
-      this.heroForm.reset({
-        id: this.selectedHero.id,
-        name: this.selectedHero.name,
-        strength: this.selectedHero.strength,
+      this.heroForm = this.formBuilder.group({
+        id: new FormControl(this.selectedHero.id),
+        name: new FormControl(this.selectedHero.name, [Validators.required]),
+        strength: new FormControl(this.selectedHero.strength, [
+          Validators.required,
+          Validators.pattern('^[0-9]*$'),
+          Validators.min(1),
+        ]),
       });
     }
   }
@@ -61,11 +65,12 @@ export class HeroDetailComponent implements OnInit {
   }
 
   onChange(heroForm: FormGroup): void {
-    if (heroForm.value.name !== '' && heroForm.value.strength !== '') {
+    console.log(heroForm);
+    if (heroForm.valid) {
       var updatedHero: Hero = {
         id: heroForm.value.id,
-        name: heroForm.value.name,
-        strength: heroForm.value.strength,
+        name: heroForm.value.name.trim(),
+        strength: parseInt(heroForm.value.strength.trim(), 10),
       };
       this.heroService.setHero(updatedHero);
     }

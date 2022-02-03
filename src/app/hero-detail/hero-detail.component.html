@@ -14,24 +14,56 @@
       </div>
       <div class="input-con">
         <label for="name">name:</label>
-        <input
-          autocomplete="off"
-          id="name"
-          formControlName="name"
-          (change)="onChange(heroForm)"
-        />
-        <span class="validation"></span>
+        <div class="relative">
+          <input
+            autocomplete="off"
+            id="name"
+            formControlName="name"
+            (change)="onChange(heroForm)"
+            [ngClass]="{
+              error:
+                heroForm.controls['name'].errors !== null && heroForm.touched
+            }"
+          />
+          <span class="validation">
+            <ng-template
+              [ngIf]="heroForm.controls['name'].errors?.['required'] && heroForm.touched"
+              >Name is required</ng-template
+            >
+          </span>
+        </div>
       </div>
       <div class="input-con">
         <label for="strength">strength:</label>
-        <input
-          autocomplete="off"
-          id="strength"
-          formControlName="strength"
-          (change)="onChange(heroForm)"
-        />
+        <div class="relative">
+          <input
+            autocomplete="off"
+            id="strength"
+            formControlName="strength"
+            (change)="onChange(heroForm)"
+            [ngClass]="{
+              error:
+                heroForm.controls['strength'].errors !== null &&
+                heroForm.touched
+            }"
+          />
+          <span class="validation">
+            <ng-template
+              [ngIf]="heroForm.controls['strength'].errors?.['required'] && heroForm.touched"
+              >Strength value is required</ng-template
+            >
+            <ng-template
+              [ngIf]="heroForm.controls['strength'].errors?.['pattern'] && heroForm.touched"
+              >Numeric value is required</ng-template
+            >
+
+            <ng-template
+              [ngIf]="heroForm.controls['strength'].errors?.['min'] && heroForm.touched"
+              >Cannot be 0</ng-template
+            >
+          </span>
+        </div>
       </div>
-      <!-- <button type="Submit">Submit</button> -->
     </form>
   </div>
 

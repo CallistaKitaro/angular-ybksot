@@ -52,7 +52,8 @@ export class HeroService {
     debugger;
     this.heroes.find((current) => {
       if (current.id === hero.id) {
-        current = hero;
+        current.name = hero.name;
+        current.strength = hero.strength;
       }
     });
   }

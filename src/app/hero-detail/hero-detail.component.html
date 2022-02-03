@@ -6,7 +6,8 @@
   <div class="margin-top-xl" *ngIf="selectedHero">
     <h2 style="font-weight: bold">{{ selectedHero.name }} Details</h2>
 
-    <form [formGroup]="heroDetailForm">
+    <form [formGroup]="heroForm">
+      <!-- <form #HeroForm="ngForm"> -->
       <div class="display-flex margin-bottom-m">
         <label>id:</label>
         {{ selectedHero.id }}
@@ -17,8 +18,7 @@
           autocomplete="off"
           id="name"
           formControlName="name"
-          [(ngModel)]="selectedHero.name"
-          (change)="onChange(selectedHero)"
+          (change)="onChange(heroForm)"
         />
         <span class="validation"></span>
       </div>
@@ -28,10 +28,10 @@
           autocomplete="off"
           id="strength"
           formControlName="strength"
-          [(ngModel)]="selectedHero.strength"
-          (change)="onChange(selectedHero)"
+          (change)="onChange(heroForm)"
         />
       </div>
+      <!-- <button type="Submit">Submit</button> -->
     </form>
   </div>
 
